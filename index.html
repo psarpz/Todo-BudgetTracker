@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List & Budget Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>To-Do List & Budget Tracker</h1>
+
+            <!-- To-Do List Section -->
+            <div class="section">
+                <h2>To-Do List</h2>
+                <input type="text" v-model="taskInput" placeholder="Add new task">
+                <select v-model="selectedPriority">
+                    <option value="" disabled selected>Select priority</option>
+                    <option v-for="option in priorityOptions" :value="option">{{ option }}</option>
+                </select>
+                <select v-model="selectedCategory">
+                    <option value="" disabled selected>Select category</option>
+                    <option v-for="option in categoryOptions" :value="option">{{ option }}</option>
+                </select>
+                <input type="date" v-model="dueDate">
+                <button @click="addTask">Add</button>
+                <table id="taskList" class="task-table">
+                    <caption>To-Do Tasks</caption>
+                    <tr v-for="(task, index) in tasks" :key="index">
+                        <td>{{ task.task }}</td>
+                        <td>{{ task.priority }}</td>
+                        <td>{{ task.category }}</td>
+                        <td>{{ task.dueDate }}</td>
+                        <td @dblclick="moveTaskToCompleted(index)">Move to Completed</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Budget Tracker Section -->
+	<!-- Budget Tracker Section -->
+	<div class="section">
+    		<h2>Budget Tracker</h2>
+    		<div>
+        		<input type="number" v-model="income" placeholder="Income" min="0">
+    		</div>
+    <div v-for="(expense, index) in expenses" :key="index">
+        <input type="text" v-model="expense.name" placeholder="Expense">
+        <input type="number" v-model="expense.amount" placeholder="Amount" min="0">
+    </div>
+    <button @click="addExpense">Add Expense</button>
+    <div>
+        <span>Total Expenses: ${{ totalExpenses }}</span>
+        <span>Remaining: ${{ remainingBudget }}</span>
+    </div>
+</div>
+
+
+
+            <!-- Completed Tasks Section -->
+            <div class="section">
+                <h2>Completed Tasks</h2>
+                <table id="doneList" class="task-table">
+                    <caption>Completed Tasks</caption>
+                    <tr v-for="(task, index) in completedTasks" :key="index">
+                        <td>{{ task.task }}</td>
+                        <td><button @click="moveTaskToTodo(index)">Move back to To-Do</button></td>
+                        <td><button @click="deleteTask(index)">Delete</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

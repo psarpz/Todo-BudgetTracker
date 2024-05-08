@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #87CEEB, #4682B4); /* Gradient background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    animation: fadeIn 0.5s ease; /* Fade-in animation */
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input[type="text"], select, input[type="date"], input[type="number"] {
+    width: calc(33.33% - 10px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.task-table th, .task-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.task-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.task-table tr:hover {
+    background-color: #f0f0f0;
+}
+
+.task-table td:last-child {
+    text-align: center;
+}
+
+.task-table button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-table button:hover {
+    background-color: #d32f2f;
+}
+
+.section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for sections */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+.section h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section input[type="text"],
+.section input[type="number"] {
+    width: calc(33.33% - 10px);
+}
+
+.section input[type="number"] {
+    width: calc(33.33% - 20px);
+}
+
+.section input[type="text"],
+.section input[type="number"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.section span {
+    margin-left: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
